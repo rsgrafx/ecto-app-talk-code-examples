@@ -1,0 +1,23 @@
+<h4>Added to <%= @user.street_name %>'s Shopping Cart</h4>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </li>
+
+  <li>
+    <strong>Street name:</strong>
+    <%= @product.street_name %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @product.url %>
+  </li>
+
+</ul>
+
+<!-- <span><%= link "Edit", to: product_path(@conn, :edit, @product) %></span> -->
+<span><%= link "Back", to: page_path(@conn, :index) %></span>
