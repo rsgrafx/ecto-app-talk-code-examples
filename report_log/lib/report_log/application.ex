@@ -10,10 +10,10 @@ defmodule ReportLog.Application do
     # List all child processes to be supervised
     children = [
       PGChannel.Repo,
-      worker(
-        ReportLog.ChannelListener,
-        ["new_order_created", [name: ReportLog.ChannelListener, restart: :permanent]]
-      )
+      worker(ReportLog.ChannelListener, [
+        "new_cart_created",
+        [name: ReportLog.ChannelListener, restart: :permanent]
+      ])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

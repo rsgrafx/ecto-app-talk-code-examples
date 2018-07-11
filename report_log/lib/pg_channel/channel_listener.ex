@@ -19,7 +19,7 @@ defmodule ReportLog.ChannelListener do
     {:ok, {pid, channel, ref}}
   end
 
-  def handle_info({:notification, _, _, "new_order_created", payload}, _state) do
+  def handle_info({:notification, _, _, "new_cart_created", payload}, _state) do
     IO.inspect(Poison.decode!(payload))
     {:noreply, :event_handled}
   end

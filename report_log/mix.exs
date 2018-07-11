@@ -7,7 +7,8 @@ defmodule ReportLog.MixProject do
       version: "0.1.0",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -25,6 +26,12 @@ defmodule ReportLog.MixProject do
       {:ecto, "~> 2.2"},
       {:postgrex, "~> 0.13.5"},
       {:poison, "~> 3.1"}
+    ]
+  end
+
+  defp aliases do
+    [
+      "ecto.gen.migration": ["ecto.gen.migration -r ReportLog.Repo"]
     ]
   end
 end
